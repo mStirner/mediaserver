@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Audio and Video</title>
+</head>
+
+<body>
+    <video autoplay></video>
+    <script type="text/javascript">
+
+
+    const child = require("child_process");
+
+    child.exec("vlc");
+
+
+/*
+        const { desktopCapturer } = require('electron')
+
+    
+            function errorCallback(e) {
+                console.log('Error', e)
+            }
+    
+            navigator.getUserMedia({
+                video: true,
+                audio: true
+            }, (localMediaStream) => {
+    
+                var video = document.querySelector('video')
+                video.src = window.URL.createObjectURL(localMediaStream)
+                video.onloadedmetadata = (e) => {
+                    // Ready to go. Do some stuff.
+                };
+    
+            }, errorCallback)
+
+
+        desktopCapturer.getSources({ types: ['window', 'screen'] }, (error, sources) => {
+            if (error) throw error
+            for (let i = 0; i < sources.length; ++i) {
+                if (sources[i].name === 'Homeserver') {
+                    navigator.webkitGetUserMedia({
+                        audio: false,
+                        video: {
+                            mandatory: {
+                                chromeMediaSource: 'desktop',
+                                chromeMediaSourceId: sources[i].id,
+                                minWidth: 1280,
+                                maxWidth: 1280,
+                                minHeight: 720,
+                                maxHeight: 720
+                            }
+                        }
+                    }, handleStream, handleError)
+                    return
+                }
+            }
+        })
+
+        function handleStream(stream) {
+            document.querySelector('video').src = URL.createObjectURL(stream)
+        }
+
+        function handleError(e) {
+            console.log(e)
+        }*/
+
+    </script>
+</body>
+
+</html>

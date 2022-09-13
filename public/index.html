@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <title>Hello, world!</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <script src=" https://code.jquery.com/jquery-3.3.1.min.js"> </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+    <script src="https://unpkg.com/http-vue-loader"></script>
+    <!--<script src="https://unpkg.com/vuex "></script>-->
+
+    <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+    <script src="https://unpkg.com/@videojs/http-streaming@1.9.3/dist/videojs-http-streaming.min.js"></script>
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script>
+
+        const socket = io();
+
+        socket.on("connect", function () {
+            console.log("Connected to server");
+        });
+
+        $(document).ready(function () {
+
+
+            console.log("DOM loaded");
+
+            // 0. If using a module system (e.g. via vue-cli), import Vue and VueRouter
+            // and then call `Vue.use(VueRouter)`.
+
+
+            // 2. Define some routes
+            // Each route should map to a component. The "component" can
+            // either be an actual component constructor created via
+            // `Vue.extend()`, or just a component options object.
+            // We'll talk about nested routes later.
+            const routes = [
+                { path: '/home', component: httpVueLoader("/templates/tpl.home.vue") },
+                { path: '/movies', component: httpVueLoader("/templates/tpl.movies.vue") },
+                { path: '/movies/:_id', component: httpVueLoader("/templates/tpl.movie-info.vue") },
+                { path: '/shows', component: httpVueLoader("/templates/tpl.shows.vue") },
+                { path: '/shows/:_id', component: httpVueLoader("/templates/tpl.show-info.vue") },
+                { path: '/music', component: httpVueLoader("/templates/tpl.music.vue") },
+                { path: '/games', component: httpVueLoader("/templates/tpl.games.vue") },
+                { path: '/games/:_id', component: httpVueLoader("/templates/tpl.game-info.vue") },
+                { path: '/apps', component: httpVueLoader("/templates/tpl.apps.vue") },
+                { path: '/source', component: httpVueLoader("/templates/tpl.source.vue") },
+                { path: "*", redirect: "/home" }
+            ];
+
+
+            // register componetsn
+            Vue.component('list-view', httpVueLoader("/components/list-view.vue"));
+
+
+            // 3. Create the router instance and pass the `routes` option
+            // You can pass in additional options here, but let's
+            // keep it simple for now.
+            const router = new VueRouter({
+                routes // short for `routes: routes`
+            });
+
+            // 4. Create and mount the root instance.
+            // Make sure to inject the router with the router option to make the
+            // whole app router-aware.
+            const app = new Vue({
+                router
+            });
+
+
+
+
+
+
+            app.$mount('#app');
+            //Vue.use(Vuex);
+
+            // Now the app has started!    
+        });
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav w-100 row">
+
+                    <li class="nav-item col text-center">
+                        <router-link to="/home" class="nav-link">
+                            <i class="fas fa-home d-block"></i>
+                            <span>Start</span>
+                        </router-link>
+                    </li>
+
+                    <li style="width: 1px; background-color: rgba(0, 0, 0, .2)"></li>
+
+                    <li class="nav-item col text-center">
+                        <router-link to="/movies" class="nav-link">
+                            <i class="fas fa-film d-block"></i>
+                            <span>Filme</span>
+                        </router-link>
+                    </li>
+
+                    <li style="width: 1px; background-color: rgba(0, 0, 0, .2)"></li>
+
+                    <li class="nav-item col text-center">
+                        <router-link to="/shows" class="nav-link">
+                            <i class="fas fa-play-circle d-block"></i>
+                            <span>Serien</span>
+                        </router-link>
+                    </li>
+
+                    <li style="width: 1px; background-color: rgba(0, 0, 0, .2)"></li>
+
+                    <li class="nav-item col text-center">
+                        <router-link to="/music" class="nav-link">
+                            <i class="fas fa-music d-block"></i>
+                            <span>Musik</span>
+                        </router-link>
+                    </li>
+
+                    <li style="width: 1px; background-color: rgba(0, 0, 0, .2)"></li>
+
+                    <li class="nav-item col text-center">
+                        <router-link to="/games" class="nav-link">
+                            <i class="fas fa-gamepad d-block"></i>
+                            <span>Spiele</span>
+                        </router-link>
+                    </li>
+
+                    <li style="width: 1px; background-color: rgba(0, 0, 0, .2)"></li>
+
+                    <li class="nav-item col text-center">
+                        <router-link to="/apps" class="nav-link">
+                            <i class="fas fa-puzzle-piece d-block"></i>
+                            <span>Apps</span>
+                        </router-link>
+                    </li>
+
+                    <li style="width: 1px; background-color: rgba(0, 0, 0, .2)"></li>
+
+                    <li class="nav-item col text-center">
+                        <router-link to="/source" class="nav-link">
+                            <i class="fas fa-sign-in-alt d-block"></i>
+                            <span>Quellen</span>
+                        </router-link>
+                    </li>
+                    <!--
+                    <li style="width: 1px; background-color: rgba(0, 0, 0, .2)"></li>
+
+                    <li class="nav-item col text-center">
+                        <router-link to="/shop" class="nav-link">
+                            <i class="fas fa-shopping-basket d-block"></i>
+                            <span>Shop</span>
+                        </router-link>
+                    </li>-->
+
+                </ul>
+            </div>
+        </nav>
+        <!-- NAVBAR -->
+
+
+        <!-- VIEW -->
+        <router-view></router-view>
+        <!-- VIEW -->
+
+
+        <!-- UTILITY -->
+        <div id="utility">
+            <div class="container-fluid">
+
+                <button class="btn btn-outline-danger">Ausschalten</button>
+                <button class="btn btn-outline-primary">Neustarten</button>
+
+            </div>
+        </div>
+        <!-- UTILITY -->
+
+    </div>
+</body>
+
+</html>

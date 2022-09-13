@@ -1,0 +1,87 @@
+* {
+    outline: none !important;
+}
+
+body {
+    /*color: rgba(255, 255, 255, .5);*/
+    color: #efefef;
+    background-color: #1c1b1e;
+    margin-top: 80px;
+    overflow-y: scroll;
+}
+
+nav.navbar {
+    padding: 0px;
+}
+
+/*
+ul.navbar-nav li {
+    margin: 4px;
+}
+
+ul.navbar-nav li.active a {
+    color: #007bff !important;
+}
+
+ul.navbar-nav li a {
+    padding: 2px;
+    height: 50px;
+    width: 80px;
+    border-right: 1px solid rgba(0, 0, 0, .2);
+    text-align: center;
+}
+*/
+ul.navbar-nav li a i {
+    display: block;
+    font-size: 26px;
+}
+
+
+hr {
+    border: 0;
+    border-top-color: currentcolor;
+    border-top-style: none;
+    border-top-width: 0px;
+    border-top: 1px solid rgba(0, 0, 0, .2);
+}
+
+
+
+#utility {
+    border-top: 1px solid transparent;
+    height: 0px;
+    background-color: #343a40 !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999999;
+    width: 100%;
+}
+
+#utility:hover {
+    height: 50px;
+    padding: 5px;
+}
+
+
+.carousel-control-prev,
+.carousel-control-next{
+    width: 50px;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.list-view{
+    cursor: pointer;
+    opacity: 1;
+}
+
+
+.btn-default, .btn-default:hover, 
+.btn-default:active, 
+.btn-default:active:focus, 
+.btn-default:visited, 
+.btn-default:focus { 
+    color: #dcdcdc; 
+    background-color: #232323; 
+    outline: none; 
+}

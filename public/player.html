@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <title>Hello, world!</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+    <style>
+        * {
+            outline: none !important;
+        }
+
+        body {
+            /*color: rgba(255, 255, 255, .5);*/
+            color: #efefef;
+            margin-top: 70px;
+        }
+
+        nav.navbar {
+            padding: 0px;
+        }
+
+        ul.navbar-nav li {
+            padding: 4px;
+        }
+
+        ul.navbar-nav li.active a {
+            color: #007bff !important;
+        }
+
+        ul.navbar-nav li a {
+            padding: 2px;
+            height: 50px;
+            width: 80px;
+            border-right: 1px solid rgba(0, 0, 0, .2);
+            text-align: center;
+        }
+
+        ul.navbar-nav li a i {
+            display: block;
+            font-size: 24px;
+        }
+
+        hr {
+            border: 0;
+            border-top-color: currentcolor;
+            border-top-style: none;
+            border-top-width: 0px;
+            border-top: 1px solid rgba(0, 0, 0, .2);
+        }
+    </style>
+
+    <!-- PLAYER -->
+    <style>
+        video#player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.90);
+            z-index: 99999;
+        }
+    </style>
+    <!--PLAYER -->
+
+</head>
+
+<body style="background-color: #28272c;">
+
+    <!-- NAVBAR -->
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">
+                            <i class="fas fa-home"></i>
+                            <span>Start</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./movies.html">
+                            <i class="fas fa-film"></i>
+                            <span>Filme</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Serien</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-music"></i>
+                            <span>Musik</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Spiele</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./apps.html">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span>Apps</span>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-shopping-basket"></i>
+                            <span>Shop</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+    <!-- NAVBAR -->
+
+    <!-- VIDEO PLAYER -->
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-3">
+
+                <img width="100%" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/lHu1wtNaczFPGFDTrjCSzeLPTKN.jpg">
+                <button class="btn btn-outline-primary btn-block mt-2">Wiedergabe</button>
+
+            </div>
+            <div class="col-5">
+
+                <h4>Bohemian Rhapsody</h4>
+
+                <hr />
+
+                <span>
+                    "Bohemian Rhapsody" erzählt die Geschichte wie Freddie Mercury und seine Bandmitglieder Brian May,
+                    Roger Taylor und John Deacon Queen gründeten – eine der legendärsten Rockgruppen aller Zeiten. Durch
+                    so grundverschiedene Songs wie „Killer Queen”, „Bohemian Rhapsody”, „We Are The Champions” und „We
+                    Will Rock You” sowie unzählige weitere Songs gelang der Band ein beispielloser Erfolg, der Freddie
+                    zu einem der beliebtesten Entertainer weltweit machte. Doch hinter der Fassade von Erfolg kämpft
+                    Freddie mit seiner inneren Zerrissenheit. Der aus Sansibar stammende Parse sucht unablässig nach
+                    seinem Platz in der Welt, während er gleichzeitig versucht, sich in einer Gesellschaft, die in
+                    Stereotypen und Erwartungen gefangen ist, mit einer Sexualität zu arrangieren, die er selbst kaum
+                    definieren kann. Freddie wagt es, sich zu widersetzen, aber zahlt auch den Preis dafür...
+                </span>
+
+            </div>
+            <div class="col-4">
+
+                <div>
+                    <h5>Bewertungen</h5>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star-half text-warning"></i>
+                </div>
+
+                <hr />
+
+                <div class="row">
+                    <div class="col-6">
+                        <h5>Hauptdarsteller</h5>
+
+                        <p>
+                            <b>Rami Malek</b>
+                            <br />
+                            Freddie Mercury
+                        </p>
+
+                        <p>
+                            <b>Gwilym Lee</b>
+                            <br />
+                            Brian May
+                        </p>
+
+                        <p>
+                            <b>Ben Hardy</b><br />
+                            Roger Taylor
+                        </p>
+
+                        <p>
+                            <b>Joseph Mazzello</b><br />
+                            John Deacon
+                        </p>
+
+                        <p>
+                            <b>Lucy Boynton</b><br />
+                            Mary Austin
+                        </p>
+                    </div>
+                    <div class="col-6">
+
+                        <h5>Crew</h5>
+
+                        <p>
+                            <b>Anthony McCarten</b><br />
+                            Director
+                        </p>
+
+                        <p>
+                            <b>Dexter Fletcher</b><br />
+                            Director
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- VIDEO PLAYER -->
+
+
+
+
+
+</body>
+
+</html>
